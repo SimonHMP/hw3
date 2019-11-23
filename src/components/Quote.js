@@ -8,10 +8,12 @@ export default class Quote extends Component {
 
   likeFunc = () => {
     this.setState({ liked: true, divStyle: "green" });
+    this.props.addLikes();
     //console.log(this.state.liked);
   };
   dislikeFunc = () => {
     this.setState({ liked: false, divStyle: "red" });
+    this.props.addDislikes();
     //console.log(this.state.liked);
   };
   render() {
@@ -21,8 +23,8 @@ export default class Quote extends Component {
     return (
       <div style={styler}>
         {this.props.quoteText}
-        <button onClick={this.likeFunc}>Lik</button>
-        <button onClick={this.dislikeFunc}>dislik</button>
+        <button onClick={this.likeFunc}>Lik3</button>
+        <button onClick={this.dislikeFunc}>dislik3</button>
         <div>By:{this.props.quoteAuthor}</div>
       </div>
     );
